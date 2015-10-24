@@ -18,8 +18,7 @@ func main() {
 		}
 		go func(in, out chan int) {
 			n := <-in
-			n += 1
-			out <- n
+			out <- n + 1
 		}(in, out)
 		in = out
 	}
